@@ -35,10 +35,16 @@
       <div class="mt-2 col-xs-1" align="center">
       <img class="rounded-circle border border-black" src="assets/z1.png" width="250" height="250">
     </div>
+    <!-- Seeting points scripts -->
+    <script>
+      localStorage.setItem('points', 25);
+      document.getElementById("Points").innerHTML = 'points';
+    </script>
     <div class="mt-2 col-xs-1" align="center">
         <h3 class="text-center">Test User</h3>
         <h3 class="text-center">School: UC San Diego</h3>
         <h3 color="text-center">Points: </h3>
+        <h3 id="Points"> Points </h3>
         <a class="btn btn-primary" href="EditInfo.html" role="button">Edit Your Info</a>
         <br>
         <br>
