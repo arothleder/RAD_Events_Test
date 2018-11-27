@@ -100,32 +100,34 @@
                   itemsArray.push(currentIndex);
                   localStorage.setItem('items', JSON.stringify(itemsArray));
 
-                window.location.href="./my_events/my_events.html";
+                //window.location.href="./my_events/my_events.html";
               }
               </script>
 
           <button type="button"style="width:100px;" class="btn btn-danger" onclick="NextEvent()"> No</button>
-          <button type="button"style="width:100px;" class="btn btn-success" data-target="#myModal" onclick="NextEvent()"> Yes</button>
+          <a type="button"style="width:100px;" class="btn btn-success" data-target="#myModal" onclick="GoToPage()"> Yes</a>
             <!-- Modal -->
             <div id="myModal" class="modal fade" role="dialog">
               <div class="modal-dialog">
+
                 <!-- Modal content-->
                 <div class="modal-content">
                   <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                   </div>
                   <div class="modal-body">
-                     <p>Adding this event to 'My Events'.</p>
+                    <p id="points1"> Event added to 'My Events'!</p>
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                   </div>
                 </div>
+
               </div>
             </div>
             <!-- end of Modal -->
 
-      <!-- </div> -->
+      </div>
       <div class="mt-2 col-xs-1" align="center">
           <a class="btn btn-primary" href="selection_page/Selection.html" role="button">Redo Filtering</a>
           <br>
