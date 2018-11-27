@@ -105,18 +105,28 @@
               </script>
 
           <button type="button"style="width:100px;" class="btn btn-danger" onclick="NextEvent()" > No</button>
-          <!-- Modal content-->
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button"style="width:100px;" class="btn btn-success" onclick="GoToPage()" > Yes</button>
-            </div>
-            <div class="modal-body">
-               <p>Adding Event to 'My Events'.</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button"style="width:100px;" class="btn btn-success" data-target="#myModal"> Yes</button>
+          <!-- Modal -->
+          <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                   <p>Removing 200 points from your profile.</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+
             </div>
           </div>
+          <!-- end of Modal -->
+
 
       </div>
       <div class="mt-2 col-xs-1" align="center">
