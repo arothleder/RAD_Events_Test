@@ -105,7 +105,19 @@
               </script>
 
           <button type="button"style="width:100px;" class="btn btn-danger" onclick="NextEvent()" > No</button>
-          <button type="button"style="width:100px;" class="btn btn-success" onclick="GoToPage()" > Yes</button>
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button"style="width:100px;" class="btn btn-success" onclick="GoToPage()" > Yes</button>
+            </div>
+            <div class="modal-body">
+               <p>Adding Event to 'My Events'.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+
       </div>
       <div class="mt-2 col-xs-1" align="center">
           <a class="btn btn-primary" href="selection_page/Selection.html" role="button">Redo Filtering</a>
