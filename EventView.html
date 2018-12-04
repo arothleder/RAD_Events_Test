@@ -101,6 +101,7 @@
                 {
                     itemsArray.push(currentIndex);
                     localStorage.setItem('items', JSON.stringify(itemsArray));
+                    NextEvent();
                     if(window.confirm("Your selection has been recorded. Would you like to see your events?"))
                     {
                       window.location.href="./my_events/my_events.html";
