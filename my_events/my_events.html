@@ -30,7 +30,7 @@ div.overflow {
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="../bootstrap_home/home.html">Rad Events</a>
+        <a class="navbar-brand" href="#">Rad Events</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -68,6 +68,25 @@ div.overflow {
 
     localStorage.setItem('items', JSON.stringify(itemsArray));
     const data = JSON.parse(localStorage.getItem('items'));
+    function AddPoints(num)
+    {
+      let initialPoints = localStorage.getItem('points') ? JSON.parse(localStorage.getItem('points')) : 0;
+
+      var pointsToAdd = points[data[num]];
+      var iPoints = parseInt(initialPoints);
+      var sPoints = parseInt(pointsToAdd);
+
+      sPoints += iPoints;
+      localStorage.setItem('points', JSON.stringify(sPoints));
+      console.log("NUM Points = " + sPoints);
+      LoadPoints();
+    }
+    function LoadPoints()
+      {
+          let initialPoints = localStorage.getItem('points') ? JSON.parse(localStorage.getItem('points')) : 0;
+          console.log("NUM Points = " + initialPoints);
+          document.getElementById("pointsDisplay").innerHTML = "Points: " + initialPoints;
+      }
     function LoadEvents() {
       var titles = ["Oceanfront Yoga","Quatuor Modigliani","Filera","Half Marathon", "D&D Weekend","FNGRS CRSSD", "Marvel Dice Masters", "OMFG","NORA EN PURE", "Munchkin Game"];
       var eventTypes = ["Active","Cultural", "Cultural", "Active", "Gaming","Nightlife","Gaming","Nightlife", "Nightlife", "Gaming"]
@@ -118,7 +137,7 @@ div.overflow {
         document.getElementById("points4").innerHTML = points[data[3]] + " points";
         document.getElementById("locations4").innerHTML = "Location: " + locations[data[3]];
       }
-
+      LoadPoints();
     }
 
 </script>
@@ -131,13 +150,13 @@ div.overflow {
       <div class="row">
 
         <div class="col-lg-3">
-          <a class="btn btn-success" href="../EventView.html" role="button">View More Events</a>
+          <h2 id="pointsDisplay" class="my-4">Points:</h2>
           <h2 class="my-4">Event:</h2>
           <div class="list-group">
-            <a href="#row1" class="list-group-item" id="title1"></a>
-            <a href="#row2" class="list-group-item" id="title2"></a>
-            <a href="#row3" class="list-group-item" id="title3"></a>
-            <a href="#row4" class="list-group-item" id="title3"></a>
+            <a href="#row2" class="list-group-item" id="title1">NA</a>
+            <a href="#row2" class="list-group-item" id="title2">NA</a>
+            <a href="#row3" class="list-group-item" id="title3">NA</a>
+            <a href="#row4" class="list-group-item" id="title3">NA</a>
           </div>
 
         </div>
@@ -162,12 +181,12 @@ div.overflow {
                 </a>
               </div>
               <div class="col-md-5">
-                <a id="title1"></a>
+                <h3 id="title1">NA</h3>
                 <p id="info1">NA</p>
                 <p id="points1">NA</p>
                 <p id="locations1">NA</p>
                 <!--<a class="btn btn-primary" href="#">I attended</a>-->
-                <a class="btn btn-primary btn-xl js-scroll-trigger green-btn text-white" data-toggle="modal" data-target="#myModal" color="green">I Attended</a>
+                <a class="btn btn-primary btn-xl js-scroll-trigger green-btn text-white" onclick="AddPoints('0')" data-toggle="modal" data-target="#myModal" color="green">I Attended</a>
                 <!-- Modal -->
                 <div id="myModal" class="modal fade" role="dialog">
                   <div class="modal-dialog">
@@ -175,10 +194,10 @@ div.overflow {
                     <!-- Modal content-->
                     <div class="modal-content">
                       <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <button type="button"  class="close" data-dismiss="modal">&times;</button>
                       </div>
                       <div class="modal-body">
-                        <p id="points1"> points added to profile!</p>
+                        <p id="points1">Points have been added to your profile!</p>
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -201,12 +220,12 @@ div.overflow {
                 </a>
               </div>
               <div class="col-md-5">
-                <h3 id="title2"></h3>
+                <h3 id="title2">NA</h3>
                 <p id="info2">NA</p>
                 <p id="points2">NA</p>
                 <p id="locations2">NA</p>
                 <!--<a class="btn btn-primary" href="#">I attended</a>-->
-                <a class="btn btn-primary btn-xl js-scroll-trigger green-btn text-white" data-toggle="modal" data-target="#myModal" color="green">I Attended</a>
+                <a class="btn btn-primary btn-xl js-scroll-trigger green-btn text-white" onclick="AddPoints('1')" data-toggle="modal" data-target="#myModal" color="green">I Attended</a>
                 <!-- Modal -->
                 <div id="myModal" class="modal fade" role="dialog">
                   <div class="modal-dialog">
@@ -217,7 +236,7 @@ div.overflow {
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                       </div>
                       <div class="modal-body">
-                        <p id="points2"> points added to profile!</p>
+                        <p id="points2">Points have been added to your profile!</p>
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -245,7 +264,7 @@ div.overflow {
                 <p id = "points3">NA</p>
                 <p id = "locations3">NA</p>
                 <!--<a class="btn btn-primary" href="#">I attended</a>-->
-                <a class="btn btn-primary btn-xl js-scroll-trigger green-btn text-white" data-toggle="modal" data-target="#myModal" color="green">I Attended</a>
+                <a class="btn btn-primary btn-xl js-scroll-trigger green-btn text-white" onclick="AddPoints('2')" data-toggle="modal" data-target="#myModal" color="green">I Attended</a>
                 <!-- Modal -->
                 <div id="myModal" class="modal fade" role="dialog">
                   <div class="modal-dialog">
@@ -256,7 +275,7 @@ div.overflow {
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                       </div>
                       <div class="modal-body">
-                        <p id="points3"> points added to profile!</p>
+                        <p id="points3">Points have been added to your profile!</p>
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -285,7 +304,7 @@ div.overflow {
                 <p id = "points4">NA</p>
                 <p id = "locations4">NA</p>
                 <!--<a class="btn btn-primary" href="#">I attended</a>-->
-                <a class="btn btn-primary btn-xl js-scroll-trigger green-btn text-white" data-toggle="modal" data-target="#myModal" color="green">I Attended</a>
+                <a class="btn btn-primary btn-xl js-scroll-trigger green-btn text-white" onclick="AddPoints('3')" data-toggle="modal" data-target="#myModal" color="green">I Attended</a>
                 <!-- Modal -->
                 <div id="myModal" class="modal fade" role="dialog">
                   <div class="modal-dialog">
@@ -296,7 +315,7 @@ div.overflow {
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                       </div>
                       <div class="modal-body">
-                        <p id="points4"> points added to profile!</p>
+                        <p id="points4">Points have been added to your profile!</p>
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

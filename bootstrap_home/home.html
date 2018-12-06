@@ -87,6 +87,25 @@
         background-color:green;
     }
     </style>
+      <script>
+        function LoadPoints()
+        {
+          let initialPoints = localStorage.getItem('points') ? JSON.parse(localStorage.getItem('points')) : 0;
+          var iPoints = parseInt(initialPoints);
+          var sPoints = 200;
+          if(iPoints >= 200)
+          {
+            iPoints -= 200;
+            localStorage.setItem('points', JSON.stringify(iPoints));
+            console.log("NUM Points = " + iPoints);
+          }
+          else{
+            console.log("NOT ENOUGH = " + iPoints);
+            document.getElementById("Redeem").innerHTML = "Sorry, not enough points!";
+          }
+        }
+    </script>    
+
 
     <section class="bg-primary">
       <div class="container">
@@ -97,7 +116,7 @@
             <img src="../images/Hullabaloo.jpeg" class="center">
             <h2 class="text-white">(200 points)</h2>
             <br>
-            <a class="btn btn-primary btn-xl js-scroll-trigger green-btn text-white" data-toggle="modal" data-target="#myModal" color="green">Spend Points on Event</a>
+            <a class="btn btn-primary btn-xl js-scroll-trigger green-btn text-white" onclick="LoadPoints()" data-toggle="modal" data-target="#myModal" color="green">Spend Points on Event</a>
             <!-- Modal -->
             <div id="myModal" class="modal fade" role="dialog">
               <div class="modal-dialog">
