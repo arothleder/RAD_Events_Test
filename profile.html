@@ -1,8 +1,14 @@
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
+<style>
+#grad1 {
+  height: 800px;
+  background-color: #f05f40;
+</style>
 
 <body onload="javascript:LoadPoints()">
+      <div id="grad1">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="./bootstrap_home/home.html">Rad Events</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,7 +43,7 @@
           console.log("NUM Points = " + initialPoints);
           document.getElementById("pointsDisplay").innerHTML = "Points: " + initialPoints;
         }
-</script>    
+</script>
 
 
       <div class="mt-2 col-xs-1" align="center">
@@ -45,15 +51,16 @@
     </div>
     <!-- Seeting points scripts -->
     <div class="mt-2 col-xs-1" align="center">
-        <h3 class="text-center">Test User</h3>
-        <h3 class="text-center">School: UC San Diego</h3>
-        <h3 id="pointsDisplay" color="text-center">Points: </h3>
+        <h3 class="text-center" style="color:white;">Test User</h3>
+        <h3 class="text-center" style="color:white;">School: UC San Diego</h3>
+        <h3 id="pointsDisplay" style="color:white;" color="text-center white">Points: </h3>
         <a class="btn btn-primary" href="EditInfo.html" role="button">Edit Your Info</a>
         <br>
         <br>
         <!-- <a class="btn btn-outline-success btn-lg" href="selection_page/Selection.html"
         type="Generate Events" >Find an Event</a> -->
       </div>
+    </div>
 <!-- <div class="mx-auto" style="width: 100px;">
 <form class="form-inline my-2 my-lg-0">
     <a class="btn btn-outline-success" href="selection_page/Selection.html"
